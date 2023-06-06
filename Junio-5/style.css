@@ -1,0 +1,42 @@
+.container {
+    height: 200px;
+    width: 300px;
+    border: 2px solid black;
+    background: #989ff8;
+    background: linear-gradient(90deg, #989ff8 10%, #021167 90%);
+    background: -webkit-linear-gradient(90deg, #989ff8 10%, #021167 90%);
+    background: -moz-linear-gradient(90deg, #989ff8 10%, #021167 90%);
+}
+
+.mainList {
+    list-style: none;
+}
+
+#li1 {
+    color: white;
+}
+
+#li2 {
+    color: white;
+}
+
+#li3 {
+    color: white;
+}
+
+.resaltado {
+    color: black;
+    background-color: greenyellow;
+}
+
+.paraLink {
+    color: red;
+    text-decoration: none;
+}
+
+.gradientText {
+    background: linear-gradient(90deg, #989ff8 10%, #021167 90%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
