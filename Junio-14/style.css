@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.mainSection {
+    margin: 0px auto;
+    width: 970px;
+    background-color: red;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex1 {
+    flex: 1;
+    background-color: green;
+    margin: 2px;
+}
+
+#nombrePropio {
+    background-color: rebeccapurple;
+}
+
+img.flex1{
+    
+}
