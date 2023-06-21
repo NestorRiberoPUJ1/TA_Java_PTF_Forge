@@ -6,24 +6,28 @@
 .container {
     width: 975px;
     margin: 0 auto;
-    background-color: dodgerblue;
-    border: 4px dotted red;
+    border: 2px solid black;
 }
 
 .nav {
     height: 48px;
-    background-color: goldenrod;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+    box-sizing: border-box;
 }
 
 .mainContent {
     min-height: 200px;
-    background-color: rebeccapurple;
+    background-color: rgb(25, 5, 45);
     padding: 12px;
 }
 
 .bottomNav {
     height: 48px;
-    background-color: green;
+    background-color: white;
 }
 
 .row {
@@ -41,7 +45,8 @@
     margin-left: 16px;
 }
 
-.description>h3 {
+.description>h3,
+.description>h4 {
     background-color: gray;
     color: white;
     padding: 8px;
@@ -54,4 +59,50 @@
 .description>a {
     color: black;
     padding: 8px;
+}
+
+.colContent {
+    margin-top: 16px;
+    width: 32%;
+    min-height: 200px;
+}
+
+.spaceBetween {
+    justify-content: space-between;
+}
+
+.colContent>img {
+    width: 100%;
+}
+
+.description.colContent>p {
+    min-height: 300px;
+}
+
+.colContent>.icon {
+    width: 48px;
+    display: inline-block;
+    margin: 4px;
+}
+
+.colContent>button {
+    display: block;
+    margin: 8px auto;
+    background-color: green;
+    color: white;
+    border-radius: 8px;
+    padding: 4px;
+}
+
+.bottomNav>p {
+    text-align: center;
+}
+
+.bottomNav img {
+    height: 16px;
+    margin: 2px;
+}
+
+.justifyCenter {
+    justify-content: center;
 }
