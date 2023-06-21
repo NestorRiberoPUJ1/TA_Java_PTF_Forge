@@ -1,0 +1,57 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.container {
+    width: 975px;
+    margin: 0 auto;
+    background-color: dodgerblue;
+    border: 4px dotted red;
+}
+
+.nav {
+    height: 48px;
+    background-color: goldenrod;
+}
+
+.mainContent {
+    min-height: 200px;
+    background-color: rebeccapurple;
+    padding: 12px;
+}
+
+.bottomNav {
+    height: 48px;
+    background-color: green;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#profilePic {
+    height: 300px;
+    border: 4px solid gainsboro;
+}
+
+.description {
+    background-color: white;
+    margin-left: 16px;
+}
+
+.description>h3 {
+    background-color: gray;
+    color: white;
+    padding: 8px;
+}
+
+.description>p {
+    padding: 8px;
+}
+
+.description>a {
+    color: black;
+    padding: 8px;
+}
