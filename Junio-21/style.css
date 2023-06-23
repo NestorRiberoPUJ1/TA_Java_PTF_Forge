@@ -73,7 +73,6 @@
 
 .blueText {
     color: rgb(75, 130, 248);
-    ;
 }
 
 .styledBtn {
@@ -102,7 +101,7 @@
 }
 
 .add {
-    background-image: url("ad_background.png");
+    background-image: url("img/ad_background.png");
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -121,4 +120,52 @@
 .add button {
     background-color: aqua;
     margin-top: 8px;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.alignEnd {
+    align-items: end;
+}
+
+.icon {
+    height: 24px;
+}
+
+.iconXL {
+    height: 48px;
+    margin-right: 8px;
+}
+
+.contactInfo>p {
+    color: gray;
+    font-size: small;
+    text-align: end;
+}
+
+.contactInfo>h4 {
+    color: dodgerblue;
+    font-size: xx-large;
+}
+
+ul,
+ol {
+    padding-left: 32px;
+}
+
+.clientImg {
+    margin: 16px 0px;
+    height: 96px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.clientImg>img {
+    height: 100%;
 }
