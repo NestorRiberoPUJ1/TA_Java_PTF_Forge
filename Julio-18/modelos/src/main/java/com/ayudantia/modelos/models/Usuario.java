@@ -65,4 +65,64 @@ public class Usuario {
   protected void onUpdate() {
     this.updated_at = new Date();
   }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public String getNombres() {
+    return nombres;
+  }
+
+  public void setNombres(String nombres) {
+    this.nombres = nombres;
+  }
+
+  public String getApellidos() {
+    return apellidos;
+  }
+
+  public void setApellidos(String apellidos) {
+    this.apellidos = apellidos;
+  }
+
+  public String getContrasena() {
+    return contrasena;
+  }
+
+  public void setContrasena(String contrasena) {
+    this.contrasena = contrasena;
+  }
+
+  public Date getCreated_at() {
+    return created_at;
+  }
+
+  public void setCreated_at(Date created_at) {
+    this.created_at = created_at;
+  }
+
+  public Date getUpdated_at() {
+    return updated_at;
+  }
+
+  public void setUpdated_at(Date updated_at) {
+    this.updated_at = updated_at;
+  }
+
+
+
+  
 }

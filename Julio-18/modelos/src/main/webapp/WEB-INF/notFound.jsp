@@ -11,16 +11,8 @@
         </head>
 
         <body>
-            <h1>Lista de usuarios</h1>
-            <ul>
-                <c:forEach var="usuario" items="${usuarios}">
-                    <li>
-                        <a href="/users/${usuario.getId()}">
-                            <c:out value="${usuario.getNombres()}" />
-                        </a>
-                    </li>
-                </c:forEach>
-            </ul>
+            <h1>USER NOT FOUND </h1>
+            <a href="/">home</a>
         </body>
 
         </html>

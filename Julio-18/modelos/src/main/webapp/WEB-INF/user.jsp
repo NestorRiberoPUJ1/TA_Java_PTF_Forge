@@ -11,16 +11,14 @@
         </head>
 
         <body>
-            <h1>Lista de usuarios</h1>
-            <ul>
-                <c:forEach var="usuario" items="${usuarios}">
-                    <li>
-                        <a href="/users/${usuario.getId()}">
-                            <c:out value="${usuario.getNombres()}" />
-                        </a>
-                    </li>
-                </c:forEach>
-            </ul>
+            <h1>
+                <c:out value="${usuario.getNombres()} ${usuario.getApellidos()}" />
+            </h1>
+
+            <h2>
+                <c:out value="${usuario.getCreated_at()}" />
+            </h2>
+            <a href="/">home</a>
         </body>
 
         </html>
