@@ -29,6 +29,7 @@ public class HomeController {
   @GetMapping("/users/{id}")
   public String viewUser(Model model, @PathVariable("id") Long id) {
     Usuario user = usuarioService.findUsuario(id);
+    System.out.println(user.getPasaporte());
     if (user == null) {
       return "notFound.jsp";
     }

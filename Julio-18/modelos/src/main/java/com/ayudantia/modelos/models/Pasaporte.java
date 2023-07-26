@@ -1,39 +1,40 @@
 package com.ayudantia.modelos.models;
 
-import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.Size;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name = "usuarios")
-public class Usuario {
+@Table(name = "pasaportes")
+public class Pasaporte {
 
   @Id //PK
   @GeneratedValue(strategy = GenerationType.IDENTITY) //AI autoincrement
   private Long id;
 
-  @Size(min = 5, max = 200)
-  private String email;
+  @Size(min = 8, max = 12)
+  private String serial;
 
-  @Size(min = 1, max = 200)
-  private String nombres;
+  @Min(0)
+  private int salidas;
 
-  @Size(min = 1, max = 200)
-  private String apellidos;
+  @Min(0)
+  private int ingresos;
 
-  @Size(min = 8, max = 200)
-  private String contrasena;
+  @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
+  private Date emision;
 
   @Column(updatable = false)
   @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
@@ -42,30 +43,23 @@ public class Usuario {
   @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
   private Date updated_at;
 
-  @OneToOne(
-    mappedBy = "usuario",
-    cascade = CascadeType.ALL,
-    fetch = FetchType.LAZY
-  )
-  private Pasaporte pasaporte;
+  @OneToOne(fetch = FetchType.LAZY)
+  @JoinColumn(name = "usuario_id")
+  private Usuario usuario;
 
-  public Usuario() {}
+  public Pasaporte() {}
 
-  public Usuario(
-    String email,
-    String nombres,
-    String apellidos,
-    String contrasena
-  ) {
-    this.email = email;
-    this.nombres = nombres;
-    this.apellidos = apellidos;
-    this.contrasena = contrasena;
+  public Pasaporte(String serial, Usuario usuario) {
+    this.serial = serial;
+    this.salidas = 0;
+    this.ingresos = 0;
+    this.usuario = usuario;
   }
 
   /* DEFAULT NOW() */
   @PrePersist
   protected void onCreate() {
+    this.emision = new Date();
     this.created_at = new Date();
     this.updated_at = new Date();
   }
@@ -84,36 +78,36 @@ public class Usuario {
     this.id = id;
   }
 
-  public String getEmail() {
-    return email;
+  public String getSerial() {
+    return serial;
   }
 
-  public void setEmail(String email) {
-    this.email = email;
+  public void setSerial(String serial) {
+    this.serial = serial;
   }
 
-  public String getNombres() {
-    return nombres;
+  public int getSalidas() {
+    return salidas;
   }
 
-  public void setNombres(String nombres) {
-    this.nombres = nombres;
+  public void setSalidas(int salidas) {
+    this.salidas = salidas;
   }
 
-  public String getApellidos() {
-    return apellidos;
+  public int getIngresos() {
+    return ingresos;
   }
 
-  public void setApellidos(String apellidos) {
-    this.apellidos = apellidos;
+  public void setIngresos(int ingresos) {
+    this.ingresos = ingresos;
   }
 
-  public String getContrasena() {
-    return contrasena;
+  public Date getEmision() {
+    return emision;
   }
 
-  public void setContrasena(String contrasena) {
-    this.contrasena = contrasena;
+  public void setEmision(Date emision) {
+    this.emision = emision;
   }
 
   public Date getCreated_at() {
@@ -132,11 +126,11 @@ public class Usuario {
     this.updated_at = updated_at;
   }
 
-  public Pasaporte getPasaporte() {
-    return pasaporte;
+  public Usuario getUsuario() {
+    return usuario;
   }
 
-  public void setPasaporte(Pasaporte pasaporte) {
-    this.pasaporte = pasaporte;
+  public void setUsuario(Usuario usuario) {
+    this.usuario = usuario;
   }
 }
