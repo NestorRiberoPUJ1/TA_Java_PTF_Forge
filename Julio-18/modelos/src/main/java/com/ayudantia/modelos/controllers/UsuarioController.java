@@ -32,7 +32,6 @@ public class UsuarioController {
     @RequestParam(value = "apellidos") String apellidos,
     @RequestParam(value = "contrasena") String contrasena
   ) {
-
     Usuario user = new Usuario(email, nombres, apellidos, contrasena);
     return usuarioService.createUsuario(user);
   }
@@ -40,5 +39,15 @@ public class UsuarioController {
   @GetMapping("/{id}")
   public String getById(@PathVariable("id") Long id) {
     return "getById";
+  }
+
+  @PostMapping("/{id}")
+  public String updateUsuarioRh(
+    @PathVariable("id") Long id,
+    @RequestParam(value = "rh") String rh
+  ) {
+    System.out.println(id);
+    System.out.println(rh);
+    return "Str";
   }
 }

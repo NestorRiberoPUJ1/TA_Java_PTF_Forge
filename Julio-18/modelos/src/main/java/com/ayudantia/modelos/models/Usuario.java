@@ -7,6 +7,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
@@ -48,6 +49,9 @@ public class Usuario {
     fetch = FetchType.LAZY
   )
   private Pasaporte pasaporte;
+
+  @ManyToOne(fetch = FetchType.LAZY)
+  private GrupoRH rh;
 
   public Usuario() {}
 
@@ -138,5 +142,13 @@ public class Usuario {
 
   public void setPasaporte(Pasaporte pasaporte) {
     this.pasaporte = pasaporte;
+  }
+
+  public GrupoRH getRh() {
+    return rh;
+  }
+
+  public void setRh(GrupoRH rh) {
+    this.rh = rh;
   }
 }

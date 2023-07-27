@@ -35,4 +35,5 @@ public interface UsuarioRepository extends CrudRepository<Usuario, Long> {
    * WHERE id = "id"
    */
   Optional<Usuario> findById(Long id);
+  
 }
