@@ -13,13 +13,17 @@ import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Size;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.Date;
 import java.util.List;
-import java.util.Locale.Category;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
 @Table(name = "paises")
+@Getter
+@Setter
 public class Paises {
 
   @Id //PK
@@ -39,6 +43,7 @@ public class Paises {
   /* DEFAULT NOW() */
   @PrePersist
   protected void onCreate() {
+    this.nombre=this.nombre.toUpperCase();
     this.created_at = new Date();
     this.updated_at = new Date();
   }
@@ -61,37 +66,6 @@ public class Paises {
 
   public Paises(String nombre) {
     this.nombre = nombre;
-  }
+  }  
 
-  public Long getId() {
-    return id;
-  }
-
-  public void setId(Long id) {
-    this.id = id;
-  }
-
-  public String getNombre() {
-    return nombre;
-  }
-
-  public void setNombre(String nombre) {
-    this.nombre = nombre;
-  }
-
-  public Date getCreated_at() {
-    return created_at;
-  }
-
-  public void setCreated_at(Date created_at) {
-    this.created_at = created_at;
-  }
-
-  public Date getUpdated_at() {
-    return updated_at;
-  }
-
-  public void setUpdated_at(Date updated_at) {
-    this.updated_at = updated_at;
-  }
 }

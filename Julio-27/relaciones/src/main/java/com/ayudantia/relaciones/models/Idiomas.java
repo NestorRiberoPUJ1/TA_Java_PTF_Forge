@@ -46,6 +46,7 @@ public class Idiomas {
   /* DEFAULT NOW() */
   @PrePersist
   protected void onCreate() {
+    this.nombre = this.nombre.toUpperCase();
     this.created_at = new Date();
     this.updated_at = new Date();
   }
@@ -92,5 +93,13 @@ public class Idiomas {
 
   public void setUpdated_at(Date updated_at) {
     this.updated_at = updated_at;
+  }
+
+  public List<Paises> getPaises() {
+    return paises;
+  }
+
+  public void setPaises(List<Paises> paises) {
+    this.paises = paises;
   }
 }

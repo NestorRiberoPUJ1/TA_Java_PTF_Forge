@@ -5,6 +5,9 @@ import com.ayudantia.relaciones.repositories.IdiomasRepository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class IdiomasService {
 
   private final IdiomasRepository idiomasRepository;
