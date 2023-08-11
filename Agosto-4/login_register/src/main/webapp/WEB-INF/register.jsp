@@ -12,9 +12,6 @@
             <body>
                 <h1>Register!</h1>
 
-                <p>
-                    <form:errors path="user.*" />
-                </p>
 
                 <form:form method="POST" action="/register" modelAttribute="user">
                     <p>
@@ -31,6 +28,9 @@
                     </p>
                     <input type="submit" value="Register!" />
                 </form:form>
+                <p>
+                    <form:errors path="user.*" />
+                </p>
 
             </body>
 
